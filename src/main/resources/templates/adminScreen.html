@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Bus Reservation System</title>
+    <title>Train Reservation System</title>
 <link rel="stylesheet" 
  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -26,7 +26,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                            <h1>Bus Reservation Admin Dashboard</h1>
+                            <h1>Train Reservation Admin Dashboard</h1>
                             <div class="container">
                             <div class="row">
                             <div class="col-md-3">
@@ -53,7 +53,7 @@
 
                 
 
-                <form th:action="@{/adminScreen}" method="post" th:object="${busDetails}">
+                <form th:action="@{/adminScreen}" method="post" th:object="${trainDetails}">
                 
                 <div class= "container">
                              <div class="row">
@@ -96,15 +96,12 @@
                     <div class="row">
                     <div class="col-md-6">
                      <div class="form-group" style="width: 21%;">
-                        <label class="control-label" for="busName"> Bus Name 
-                         </label> <input id="busName" class="form-control"
-                            th:field="*{busName}" required  autofocus="autofocus" 
+                        <label class="control-label" for="trainName"> Train Name
+                         </label> <input id="trainName" class="form-control"
+                            th:field="*{trainName}" required  autofocus="autofocus"
                                 />
                     </div>
                     </div>
-                   
-    
-                    
                    <div class="col-md-6">
                    
                    <div class="form-group" style="width: 21%;">
@@ -113,7 +110,6 @@
                             th:field="*{time}" required  autofocus="autofocus" 
                                 />
                     </div>
-                    
                      </div>
                      </div>
                      <div class="row">
@@ -126,18 +122,9 @@
                     </div>
                      </div>
                     </div>
-                
-                
-                                
-
-                
-                
-                
                 </form>
                 
         </div>
-    
-    
 </body>
 
 </html>

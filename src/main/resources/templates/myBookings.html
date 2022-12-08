@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Bus Reservation System</title>
+    <title>Train Reservation System</title>
 <link rel="stylesheet" 
  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                            <h1>Bus Reservation Dashboard</h1>
+                            <h1>Train Reservation Dashboard</h1>
                             <div class="container">
                             <div class="row">
                             <div class="col-md-3">
@@ -55,8 +55,7 @@
                 <div th:if="${param.alreadyCancel}">
                   <div class="alert alert-info" style="color: red;">Your This Trip is already Cancelled.You Will receive mail when refund is initiated.</div>
                 </div>
-                
-                
+
         <div class="row">
 
                 
@@ -82,7 +81,7 @@
 				
 					<th>
 					
-							Bus Name
+							Train Name
 					</th>
 					<th>
 					
@@ -109,17 +108,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="bus : ${bookings}">
+				<tr th:each="train : ${bookings}">
 					
-					<td th:text="${bus.fromDestination}"></td>
-					<td th:text="${bus.toDestination}"></td>
-					<td th:text="${bus.time}"></td>
-					<td th:text="${bus.BusName}"></td>
-					<td th:text="${bus.noOfPersons}"></td>
-					<td th:text="${bus.totalCalculated}"></td>
-					<td th:text="${bus.tripStatus}"></td>
-					<td> <a th:href="@{/myBooking/cancel/{id}(id=${bus.id})}" th:disabled="${bus.tripStatus eq Canceled}" class="btn btn-primary">Cancel</a>
-					<td> <a th:href="@{/myBooking/generate/{id}(id=${bus.id})}" class="btn btn-primary">Generate</a>
+					<td th:text="${train.fromDestination}"></td>
+					<td th:text="${train.toDestination}"></td>
+					<td th:text="${train.time}"></td>
+					<td th:text="${train.TrainName}"></td>
+					<td th:text="${train.noOfPersons}"></td>
+					<td th:text="${train.totalCalculated}"></td>
+					<td th:text="${train.tripStatus}"></td>
+					<td> <a th:href="@{/myBooking/cancel/{id}(id=${train.id})}" th:disabled="${t.tripStatus eq Canceled}" class="btn btn-primary">Cancel</a>
+					<td> <a th:href="@{/myBooking/generate/{id}(id=${train.id})}" class="btn btn-primary">Generate</a>
 					
 				</tr>
 			</tbody>
